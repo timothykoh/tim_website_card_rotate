@@ -1,0 +1,337 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.card-page{
+    margin: auto;
+    display: block;
+    position: relative;
+    background-position: center;
+    position: fixed;
+    -webkit-perspective: 1000px;
+    height: 100%;
+    width: 100%;
+}
+.card-bg{
+    background-position: center;
+    background-attachment: scroll;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /*background-size: 2560px;*/
+    background-repeat: no-repeat;
+}
+
+.card-bg-blur{
+    z-index: -1;
+}
+
+.card{
+    /*border-radius: 5px;*/
+    position: fixed;
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    -webkit-transform-style: preserve-3d;
+}
+
+.card .front{
+    border-radius: 5px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+}
+
+.card .back{
+    border-radius: 5px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: block; 
+    background-color: #f0f0f0;
+    /*-webkit-transform: rotateX(-180deg);*/
+    -webkit-transform: rotateY(180deg) translateZ(1px);
+    -webkit-backface-visibility: hidden;
+}
+.card .back.title-card{
+    background: none;
+}
+.card .back.clickable{
+    cursor: pointer;
+}
+.card .back.clickable:hover{
+    background-color: #fff;
+}
+    .card .back .modal-content{
+        display: none;
+    }
+.card-page-header{
+    font-family: Raleway;
+    font-weight: 100;
+    position: absolute;
+    font-size: 33px;
+    margin: auto;
+    line-height: 30px;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #f0f0f0;
+    /*text-shadow: 1px 1px 1px black;*/
+}
+
+.card-image{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-size: auto 200px;
+    display: block;
+}
+
+.card-overlay{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.card-label{
+    display: block;
+    position: absolute;
+    font-family: Raleway;
+    font-weight: 100;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    color: #f0f0f0;
+}
+
+.modal{
+    width: 0;
+    height: 0;
+    background-color: #f0f0f0;
+    display: block;
+    position: fixed;
+    z-index: 100;
+    padding: 40px;
+    display: none;
+    overflow: auto;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.8);
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+    .modal .modal-close{
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        font-family: HelveticaNeue;
+        color: #f0f0f0;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .modal .modal-bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .modal .modal-bg-overlay{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(0,0,0,0.6);        
+    }
+    .modal .modal-header{
+        display: inline-block;
+        font-family: HelveticaNeue-Thin;
+        color: #d0d0d0;
+        font-size: 45px;
+        vertical-align: top;
+        /*margin-top: 40px;*/
+        /*margin-left: 35px;*/
+    }
+        .modal .modal-content{
+            margin-top: 30px;
+            font-family: HelveticaNeue-Thin;
+            color: #d0d0d0;
+
+        }
+            .modal .modal-content .modal-desc{
+                font-size: 18px;
+            }
+            .modal .modal-content .modal-vid{
+                margin-top: 30px;
+            }
+
+    
+
+.modal.open{
+    display: block;
+    -webkit-animation: model-open 0.5s;
+    width: 85%;
+    height: 85%;
+}
+
+body.noscroll{
+    overflow: hidden;
+}
+
+@-webkit-keyframes model-open{
+    from {
+        width: 200px;
+        height: 200px;
+    }
+    to {
+        left: 7.5%;
+        top: 7.5%;
+        width: 85%;
+        height: 85%;
+    }
+}
+
+.test-img{
+    width: 100%;
+    height: 100%;
+    top: 747px;
+    position: fixed;
+    background-image: url("../images/mission_peak_path.jpg");
+}
+
+.loading-page-bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: url("../images/berkeley_hill.jpg");
+    background-size: cover;
+}
+.loading-page-bg-blur{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: url("../images/berkeley_hill_blur.jpg");
+    background-size: cover;
+}
+
+
+.loading-page-overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(40,40,40,0.7);
+}
+
+.loading-page-content{
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+}
+    .loading-page-content .loading-page-header{
+        color: #d0d0d0;
+        font-family: Raleway;
+        font-weight: 100;
+        font-size: 70px;
+        margin: auto;
+        padding-bottom: 15px;
+        margin-bottom: 80px;
+        border-bottom: 1px solid #b0b0b0;
+        width: 500px;
+        text-align: center;
+    }
+    .loading-page-content .loading-icon.spinning{
+        -webkit-animation: rotating 1s linear infinite;
+        /*border: 1px solid rgb(208,208,208);*/
+        border: 1px solid rgba(0,0,0,0);
+        -webkit-box-shadow: 1px 1px 1px white;
+        color: #d0d0d0;
+    }
+    .loading-page-content .loading-icon{
+        font-family: Raleway;
+        font-size: 60px;
+        font-weight: 200;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        border-radius: 25px;
+        display: block;
+        text-align: center;
+        line-height: 40px;
+        -webkit-transform: rotate(90deg);
+        /*-webkit-font-smoothing: antialiased;*/
+        -webkit-box-shadow: none;
+        border: 1px solid #d0d0d0;
+        color: #d0d0d0;
+    }
+
+    @-webkit-keyframes rotating{
+        from{
+            -webkit-transform: rotate(0deg);
+        }
+        to{
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    .loading-page-content .loading-instructions{
+        font-family: Raleway;
+        font-style: italic;
+        width: 42px;
+        margin: auto;
+        display: block;
+        color: #d0d0d0;
+        margin-top: 15px;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+        opacity: 1;
+    }
+    .loading-page-content .loading-instructions.hidden{
+        opacity: 0;
+    }
+    .loading-page-content .dot{
+        height: 8px;
+        width: 8px;
+        background-color: #d0d0d0;
+        margin: auto;
+        display: block;
+        margin-top: 25px;
+        border-radius: 10px;
+        opacity: 1;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+    }
+    .loading-page-content .dot.hidden{
+        opacity: 0;
+    }
